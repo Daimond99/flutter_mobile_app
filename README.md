@@ -39,27 +39,7 @@ PORT=3000
 DATABASE_URL="file:./db/dev.db"
 NODE_ENV=development
 ```
-
-เลือก **หนึ่ง** วิธี:
-
-### วิธี A — ใช้ไฟล์ `db/dev.db` ที่มีอยู่ (ง่าย/ไว)
-
-```bash
-npm run dev      # หรือ npm start
-# API: http://localhost:3000
-```
-
-### วิธี B — สร้าง DB จาก `seed.sql`
-
-```bash
-mkdir -p db
-sqlite3 db/dev.db < db/seed.sql
-npm run dev
-# API: http://localhost:3000
-```
-
 > ถ้าโปรเจกต์ใช้เครื่องมือ migrations/seed (Prisma/Knex/Sequelize) ให้รันคำสั่งตามสคริปต์จริงใน `package.json`
-
 ---
 
 ## ให้ Flutter เชื่อมต่อกับ Backend
