@@ -75,20 +75,3 @@ flutter run --dart-define=API_BASE=http://10.0.2.2:3000
 # หรือ build:
 # flutter build apk --dart-define=API_BASE=http://10.0.2.2:3000
 ```
-
-ในโค้ด (ตัวอย่าง):
-
-```dart
-const apiBase = String.fromEnvironment(
-  'API_BASE',
-  defaultValue: 'http://10.0.2.2:3000',
-);
-```
----
-
-## รันแอป Flutter
-```bash
-cd flutter_ui_1
-flutter pub get
-flutter run
-```
