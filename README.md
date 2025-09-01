@@ -1,16 +1,13 @@
-# flutter_ui_1
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+root/
+├─ flutter_ui_1/               # โค้ดแอป Flutter
+│  ├─ lib/                     # หน้าจอ UI, service เรียก API
+│  ├─ android/ ios/ web/       # ไฟล์แพลตฟอร์ม
+│  └─ pubspec.yaml             # รายการ dependencies Flutter
+│
+└─ backend/                    # (ถ้ามี) Node.js + Express + SQLite
+   ├─ src/                     # route / controller / app.js
+   ├─ db/
+   │  ├─ dev.db                # ฐานข้อมูลตัวอย่าง (ตัวเลือก)
+   │  └─ seed.sql              # สร้าง/ใส่ข้อมูลเริ่มต้น (ตัวเลือก)
+   ├─ .env.example             # ตัวอย่างตัวแปรแวดล้อม
+   └─ package.json
