@@ -65,6 +65,6 @@ lib/model/
 ## Author
 
 * Student Project - Mahasarakham University
-* Created by: **Diamond (65011212126)**
+* Created by: **Panuwat yodta (65011212126)**
 
 ---
