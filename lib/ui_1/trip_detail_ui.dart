@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_1/ui_1/showtrip_ui.dart';
+import '../model/models.dart';
 
 class TripDetailUI extends StatelessWidget {
   final TripData trip;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_1/ui_1/showtrip_ui.dart';
 import 'package:flutter_ui_1/pages/trip_detail.dart';
 import '../config/api_service.dart';
-import '../model/trip_model.dart';
+import '../model/models.dart';
 import '../debug/trip_debug.dart';
 import '../data/sample_trips.dart';
 

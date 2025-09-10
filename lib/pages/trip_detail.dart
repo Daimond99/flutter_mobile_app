@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_1/ui_1/showtrip_ui.dart';
+import '../model/models.dart';
 import 'package:flutter_ui_1/ui_1/trip_detail_ui.dart';
 
 class TripDetailPage extends StatefulWidget {

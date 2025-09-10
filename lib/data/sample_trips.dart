@@ -1,4 +1,4 @@
-import '../ui_1/showtrip_ui.dart';
+import '../model/models.dart';
 
 class SampleTrips {
   static List<TripData> getSampleTrips() {

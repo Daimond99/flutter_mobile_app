@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_1/model/response/customer_login_post_res.dart';
+import '../model/models.dart';
 import 'package:flutter_ui_1/pages/register.dart';
 import 'package:flutter_ui_1/pages/showtrip.dart';
 import 'package:flutter_ui_1/ui_1/login_ui.dart';
@@ -64,8 +64,8 @@ class _LoginPageState extends State<LoginPage> {
       log('Login Response: $result');
 
       // แปลง response เป็น model
-      CustomerLoginPostResponse loginResponse =
-          CustomerLoginPostResponse.fromJson(result);
+      CustomerLoginResponse loginResponse =
+          CustomerLoginResponse.fromJson(result);
 
       if (mounted) {
         // เก็บข้อมูล user session

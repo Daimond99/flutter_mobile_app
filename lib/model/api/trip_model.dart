@@ -1,7 +1,8 @@
 import 'dart:convert';
-import '../ui_1/showtrip_ui.dart';
+import '../data/trip_data.dart';
 
-// Trip Model สำหรับข้อมูลจาก API
+/// Trip Model for API responses
+/// This represents the data structure from the backend API
 class Trip {
   final int idx;
   final String name;
@@ -20,24 +21,24 @@ class Trip {
   });
 
   factory Trip.fromJson(Map<String, dynamic> json) => Trip(
-    idx: json["idx"] ?? 0,
-    name: json["name"] ?? "",
-    detail: json["detail"] ?? "",
-    price: json["price"]?.toString() ?? "0",
-    coverimage: json["coverimage"] ?? "",
-    country: json["country"] ?? "",
-  );
+        idx: json["idx"] ?? 0,
+        name: json["name"] ?? "",
+        detail: json["detail"] ?? "",
+        price: json["price"]?.toString() ?? "0",
+        coverimage: json["coverimage"] ?? "",
+        country: json["country"] ?? "",
+      );
 
   Map<String, dynamic> toJson() => {
-    "idx": idx,
-    "name": name,
-    "detail": detail,
-    "price": price,
-    "coverimage": coverimage,
-    "country": country,
-  };
+        "idx": idx,
+        "name": name,
+        "detail": detail,
+        "price": price,
+        "coverimage": coverimage,
+        "country": country,
+      };
 
-  // แปลงเป็น TripData สำหรับ UI เดิม
+  /// Convert Trip API model to TripData for UI usage
   TripData toTripData() {
     return TripData(
       id: idx,
@@ -52,7 +53,7 @@ class Trip {
   }
 
   String _extractDuration(String detail) {
-    // พยายามหาข้อมูลระยะเวลาจาก detail
+    // Try to extract duration from detail text
     if (detail.contains('วัน')) {
       final match = RegExp(r'(\d+)\s*วัน').firstMatch(detail);
       if (match != null) {
@@ -103,18 +104,39 @@ class Trip {
     }
     return 'อื่นๆ';
   }
-}
 
-// TripData class อยู่ใน showtrip_ui.dart แล้ว
-
-// Helper functions
-List<Trip> tripsFromJson(String str) {
-  final jsonData = json.decode(str);
-  if (jsonData is List) {
-    return List<Trip>.from(jsonData.map((x) => Trip.fromJson(x)));
+  @override
+  String toString() {
+    return 'Trip{idx: $idx, name: $name, country: $country, price: $price}';
   }
-  return [];
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    return other is Trip && other.idx == idx;
+  }
+
+  @override
+  int get hashCode => idx.hashCode;
 }
 
-String tripsToJson(List<Trip> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+/// Helper functions for Trip list operations
+class TripUtils {
+  /// Parse JSON string to List of Trip objects
+  static List<Trip> tripsFromJson(String str) {
+    final jsonData = json.decode(str);
+    if (jsonData is List) {
+      return List<Trip>.from(jsonData.map((x) => Trip.fromJson(x)));
+    }
+    return [];
+  }
+
+  /// Convert List of Trip objects to JSON string
+  static String tripsToJson(List<Trip> data) =>
+      json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+
+  /// Convert List of Trip objects to List of TripData objects
+  static List<TripData> tripsToTripDataList(List<Trip> trips) {
+    return trips.map((trip) => trip.toTripData()).toList();
+  }
+}

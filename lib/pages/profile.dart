@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../config/user_session.dart';
 import '../config/api_service.dart';
-import '../model/response/customer_login_post_res.dart';
+import '../model/models.dart';
 import 'login.dart';
 
 class ProfilePage extends StatefulWidget {

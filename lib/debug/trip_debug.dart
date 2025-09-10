@@ -1,6 +1,6 @@
 import 'dart:developer';
 import '../config/api_service.dart';
-import '../model/trip_model.dart';
+import '../model/models.dart';
 
 class TripDebug {
   static Future<void> debugTripsData() async {

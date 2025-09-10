@@ -1,28 +1,9 @@
 import 'package:flutter/material.dart';
 import '../pages/login.dart';
 import '../pages/profile.dart';
+import '../model/models.dart';
 
-class TripData {
-  final int id;
-  final String country;
-  final String city;
-  final String duration;
-  final String price;
-  final String imagePath;
-  final String category;
-  final String detail;
 
-  TripData({
-    required this.id,
-    required this.country,
-    required this.city,
-    required this.duration,
-    required this.price,
-    required this.imagePath,
-    required this.category,
-    this.detail = '',
-  });
-}
 
 class ShowTripUI extends StatefulWidget {
   final List<TripData> trips;
